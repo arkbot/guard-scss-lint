@@ -1,0 +1,12 @@
+inherit_from: ../.rubocop.yml
+
+BracesAroundHashParameters:
+  Enabled: false
+
+Metrics/LineLength:
+  Exclude:
+    - '**/**.rb'
+
+Style/FileName:
+  Exclude:
+    - '**/scss-lint_spec.rb'

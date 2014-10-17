@@ -1,0 +1,3 @@
+guard :scsslint do
+  watch(%r{.+\.scss$})
+end
