@@ -1,3 +1,13 @@
+<!--
+[![Gem Version](http://img.shields.io/gem/v/guard-scss-lint.svg)](http://badge.fury.io/rb/guard-scss-lint)
+-->
+
+[![Dependency Status](http://img.shields.io/gemnasium/arkbot/guard-scss-lint.svg)](https://gemnasium.com/arkbot/guard-scss-lint)
+[![Build Status](https://travis-ci.org/arkbot/guard-scss-lint.svg?branch=master)](https://travis-ci.org/arkbot/guard-scss-lint)
+[![Coverage Status](http://img.shields.io/coveralls/arkbot/guard-scss-lint/master.svg)](https://coveralls.io/r/arkbot/guard-scss-lint)
+[![Coverage Status](https://img.shields.io/coveralls/arkbot/guard-scss-lint/master.svg)](https://coveralls.io/r/arkbot/guard-scss-lint)
+[![Code Climate](http://img.shields.io/codeclimate/github/arkbot/guard-scss-lint.svg)](https://codeclimate.com/github/arkbot/guard-scss-lint)
+
 # guard-scss-lint
 
 **guard-scss-lint** allows you to automatically check Ruby code style with [scss-lint](https://github.com/causes/scss-lint/) when files are modified.
