@@ -9,7 +9,7 @@
 
 # guard-scss-lint
 
-**guard-scss-lint** allows you to automatically check SCSS code style with [scss-lint](https://github.com/causes/scss-lint/) when files are modified.
+**guard-scss-lint** automatically checks your SCSS code style with [scss-lint](https://github.com/causes/scss-lint/) when files are modified.
 
 Tested on MRI 1.9, 2.0, 2.1, JRuby in 1.9 mode and Rubinius.
 
