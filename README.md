@@ -113,4 +113,4 @@ See the [LICENSE.txt](LICENSE.txt) for details.
 
 ## Credits
 
-This gem is a fork of [`guard-rubocop`](https://github.com/bbatsov/rubocop/). Yuji Nakayama's work on `guard-rubocop` made this project possible amidst my numerous time constraints.
+Yuji Nakayama's gem [`guard-rubocop`](https://github.com/bbatsov/rubocop/) made this project possible amidst my numerous time constraints.

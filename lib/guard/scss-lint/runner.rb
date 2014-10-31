@@ -41,7 +41,6 @@ module Guard
         end
 
         command.concat(['--format', 'JSON', '--out', json_file_path])
-        command << '--force-exclusion'
       end
 
       def args_specified_by_user(args = @options[:cli])
@@ -90,7 +89,7 @@ module Guard
         @result ||= begin
           File.open(json_file_path) do |file|
             # Rubinius 2.0.0.rc1 does not support `JSON.load` with 3 args.
-            JSON.parse(file.read, symbolize_names: true)
+            JSON.parse(file.read)
           end
         end
       end
@@ -101,24 +100,23 @@ module Guard
       end
 
       def summary_text
-        summary = result[:summary]
-
-        text = pluralize(summary[:inspected_file_count], 'file')
+        offense_count, file_count = 0, 0
+        result.each do |file, offenses|
+          file_count += 1
+          offense_count += offenses.size
+        end
+        text = pluralize(file_count, 'file')
         text << ' inspected, '
 
-        offense_count = summary[:offense_count] || summary[:offence_count]
         text << pluralize(offense_count, 'offense', no_for_zero: true)
         text << ' detected'
       end
 
       def failed_paths
-        failed_files = result[:files].reject do |file|
-          offenses = file[:offenses] || file[:offences]
+        failed_files = result.reject do |file, offenses|
           offenses.empty?
         end
-        failed_files.map do |file|
-          file[:path]
-        end
+        failed_files.to_a.collect(&:first)
       end
 
       def pluralize(number, thing, options = {})
