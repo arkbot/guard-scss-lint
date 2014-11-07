@@ -26,7 +26,7 @@ module Guard
         keep_failed:  true,
         notification: :failed,
         cli: nil,
-        hide_stdout: true
+        hide_stdout: false
       }.merge(options)
     end
 

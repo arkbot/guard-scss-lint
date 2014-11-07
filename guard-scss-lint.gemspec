@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'ruby_gntp', '~> 0.3'
 
   spec.add_runtime_dependency 'guard', '~> 2.0'
-  spec.add_runtime_dependency 'scss-lint'
+  spec.add_runtime_dependency 'scss-lint', '~> 0.30.0'
 end

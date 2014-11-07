@@ -9,7 +9,7 @@ group :red_green_refactor, halt_on_fail: true do
     watch(%r{^spec/support/.+\.rb$}) { "spec" }
   end
 
-  guard :scsslint do
-    watch(%r{.+\.scss$})
-  end
+  # guard :scsslint do
+  #   watch(%r{.+\.scss$})
+  # end
 end

@@ -8,6 +8,7 @@ module Guard
     # instance of this class is intended to invoke `scss-lint` only once in
     # its lifetime.
     class Runner
+
       def initialize(options)
         @options = options
       end
@@ -21,10 +22,8 @@ module Guard
 
       def handle_notifications(passed)
         case @options[:notification]
-          when :failed
-            notify(passed) unless passed
-          when true
-            notify(passed)
+          when :failed then notify(passed) unless passed
+          when true then notify(passed)
         end
       end
 
@@ -35,12 +34,12 @@ module Guard
       end
 
       def build_formatters_for_command(command)
+        command.concat(['--format', 'JSON', '--out', json_file_path])
+
         # Keep default formatter for console.
         unless include_formatter_for_console?(args_specified_by_user)
           command.concat(%w(--format Default))
         end
-
-        command.concat(['--format', 'JSON', '--out', json_file_path])
       end
 
       def args_specified_by_user(args = @options[:cli])
