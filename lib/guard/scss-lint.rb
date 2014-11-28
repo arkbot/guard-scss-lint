@@ -44,7 +44,8 @@ module Guard
     end
 
     def run_on_modifications(paths)
-      run_partially(paths)
+      # run_partially(paths)
+      inspect_with_scsslint(paths)
     end
 
     def reload
